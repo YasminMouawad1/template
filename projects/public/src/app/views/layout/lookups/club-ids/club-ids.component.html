@@ -1,0 +1,54 @@
+<div class="card">
+  <div class="card-body">
+    <div class="d-flex align-items-start justify-content-between">
+      <h4 class="card-title">Club Ids</h4>
+      <button class="btn btn-success mb-4" routerLink="add">
+        <i class="mdi mdi-plus font-size-18"></i>
+        Add Club
+      </button>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table align-middle table-nowrap table-hover">
+        <thead class="table-light">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Code</th>
+            <th scope="col">Options</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let club of clubIds">
+            <td>
+              {{ club["id"] }}
+            </td>
+
+            <td>
+              <h5 class="font-size-14 mb-1">
+                <a href="javascript: void(0);" class="text-dark">
+                  {{ club["name"] }}
+                </a>
+              </h5>
+            </td>
+            <td>
+              <h5 class="font-size-14 mb-1">
+                <a href="javascript: void(0);" class="text-dark">
+                  {{ club["code"] }}
+                </a>
+              </h5>
+            </td>
+            <td>
+              <a class="action-icon text-secondary">
+                <i class="mdi mdi-table-edit font-size-18"></i
+              ></a>
+              <a class="action-icon text-danger">
+                <i class="mdi mdi-trash-can font-size-18"></i
+              ></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

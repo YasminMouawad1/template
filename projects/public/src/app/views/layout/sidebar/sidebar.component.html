@@ -1,0 +1,183 @@
+<!-- ========== Left Sidebar Start ========== -->
+
+<ng-template #contentTemplate>
+  <!--- Sidemenu -->
+  <div id="sidebar-menu">
+    <!-- Left Menu Start -->
+    <ul class="metismenu list-unstyled" id="side-menu" #sideMenu>
+      <!-- {{menuItems}} -->
+
+      <ng-container>
+        <li>
+          <a
+            routerLinkActive="active"
+            class="side-nav-link-ref"
+            routerLink="users-approval"
+          >
+            <i class="fas fa-user-check"></i>
+            <span>
+              {{ "SIDEMNUE.LINK1" | translate }}
+            </span>
+          </a>
+        </li> 
+        <li>
+          <a 
+            routerLinkActive="active"
+            class="side-nav-link-ref"  
+            routerLink="user-rejected" 
+            data-bs-toggle="collapse" data-bs-target="#rejectRequest"
+           >
+              <i class="fas fa-user-times"></i>
+              <span> {{ "SIDEMNUE.LINK6" | translate }} </span>
+       
+      </a>
+      </li>
+      <ul class="collapse sun-menu" id="rejectRequest">
+        <li>
+          <a
+            routerLinkActive="sub-active"
+            class="side-nav-link-ref"
+            routerLink="user-rejected"
+          >
+          <i class="fas fa-chevron-right"></i>
+            <span>
+              {{ "SIDEMNUE.LINK2" | translate }}
+            </span>
+          </a>
+        </li>
+        <li>
+          <a
+            routerLinkActive="sub-active"
+            class="side-nav-link-ref"
+            routerLink="user-rejected/permanent-rejected"
+          >
+          <i class="fas fa-chevron-right"></i>
+            <span>
+              {{ "SIDEMNUE.LINK5" | translate }}
+            </span>
+          </a>
+        </li>
+    </ul>
+
+        <li>
+          <a
+            routerLinkActive="active"
+            class="side-nav-link-ref"
+            routerLink="limit-review" 
+          >
+            <i class="fas fa-money-check-alt"></i>
+            <span>
+              {{ "SIDEMNUE.LINK3" | translate }}
+            </span>
+          </a>
+        </li>
+      
+
+        <li>
+          <a
+            routerLinkActive="active"
+            class="side-nav-link-ref"
+            routerLink="system-configuration"
+            data-bs-toggle="collapse" data-bs-target="#systemConfig"
+          >
+            <i class="fas fa-cog"></i>
+            <span>
+              {{ "SIDEMNUE.LINK4" | translate }}
+            </span>
+          </a>
+        </li>
+        <ul class="collapse sun-menu" id="systemConfig">
+          <li>
+            <a
+              routerLinkActive="sub-active"
+              class="side-nav-link-ref"
+              routerLink="system-configuration/system-core-configuration"
+            >
+            <i class="fas fa-chevron-right"></i>
+              <span>
+                {{ "SIDEMNUE.LINK9" | translate }}
+              </span>
+            </a>
+          </li>
+          <li>
+            <a
+              routerLinkActive="sub-active"
+              class="side-nav-link-ref"
+              routerLink="system-configuration/system-configuration-professions"
+            >
+            <i class="fas fa-chevron-right"></i>
+              <span>
+                {{ "SIDEMNUE.LINK8" | translate }}
+              </span>
+            </a>
+          </li>
+          <li>
+            <a
+              routerLinkActive="sub-active"
+              class="side-nav-link-ref"
+              routerLink="system-configuration/system-rejection-reasons"
+            >
+            <i class="fas fa-chevron-right"></i>
+              <span>
+                {{ "SIDEMNUE.LINK7" | translate }}
+              </span>
+            </a>
+          </li>
+      </ul>
+        <!-- <li class="menu-title">Administrator</li>
+
+        <li>
+          <a
+            routerlinkactive="active"
+            class="side-nav-link-ref"
+            routerLink="clubIds"
+          >
+            <i class="bx bx-file"></i>
+            <span> Club Ids</span>
+          </a>
+        </li>
+        <li>
+          <a
+            routerlinkactive="active"
+            class="side-nav-link-ref"
+            routerLink="carBrand"
+          >
+            <i class="bx bx-file"></i>
+            <span> CarBrand</span>
+          </a>
+        </li>
+
+        <li>
+          <a
+            routerlinkactive="active"
+            class="side-nav-link-ref"
+            routerLink="governorates"
+          >
+            <i class="bx bx-file"></i>
+            <span> Governorates</span>
+          </a>
+        </li>
+        <li>
+          <a
+            routerlinkactive="active"
+            class="side-nav-link-ref"
+            routerLink="employmentTypes"
+          >
+            <i class="bx bx-file"></i>
+            <span> Employment Types </span>
+          </a>
+        </li> -->
+      </ng-container>
+    </ul>
+  </div>
+</ng-template>
+<!-- Sidebar -->
+
+<div class="vertical-menu">
+  <ngx-simplebar class="h-100" #componentRef>
+    <div *ngIf="!isCondensed">
+      <ng-container *ngTemplateOutlet="contentTemplate"></ng-container>
+    </div>
+  </ngx-simplebar>
+</div>
+<!-- Left Sidebar End-->

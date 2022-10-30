@@ -1,0 +1,144 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title mb-4">Form grid layout</h4>
+
+        <form [formGroup]="carBrandForm">
+          <div class="mb-3">
+            <label for="formrow-firstname-input">Car Brand Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="formrow-firstname-input"
+              formControlName="name"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="formrow-firstname-input">Car Brand Code</label>
+            <input
+              type="text"
+              class="form-control"
+              id="formrow-firstname-input"
+              formControlName="code"
+            />
+          </div>
+          <!-- <div formArrayName="carModelModels">
+            <ng-container
+              *ngFor="
+                let carModel of getCarModel().controls;
+                let carModelIndex = index
+              "
+            >
+              <div class="mb-3" [formGroupName]="carModelIndex">
+                <label for="formrow-firstname-input">Car Model Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="formrow-firstname-input"
+                  formControlName="name"
+                />
+                <div class="mb-3">
+                  <label for="formrow-firstname-input">Car Brand Id</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="formrow-firstname-input"
+                    formControlName="brandId"
+                  />
+                </div>
+                <button
+                  type="button"
+                  class="btn btn-danger m-1"
+                  (click)="deleteCarModel(carModelIndex)"
+                >
+                  Delete Car Model
+                </button>
+              </div>
+            </ng-container>
+          </div>
+          <button
+            type="button"
+            class="btn btn-primary my-2"
+            (click)="addCarModel()"
+          >
+            Add Car Model
+          </button> -->
+          <div>
+            <button
+              type="submit"
+              class="btn btn-primary w-md"
+              (click)="onSubmit()"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title mb-4">Add New CarModel</h4>
+
+        <form [formGroup]="carModelForm">
+          <div class="mb-3">
+            <label for="formrow-firstname-input">Car Model Name </label>
+            <input
+              type="text"
+              class="form-control"
+              id="formrow-firstname-input"
+              formControlName="name"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="formrow-firstname-input">Car Brand Id </label>
+            <!-- <input
+              type="number"
+              class="form-control"
+              id="formrow-firstname-input"
+              formControlName="brandId"
+            /> -->
+            <select
+              class="form-select"
+              formControlName="brandId"
+              placeholder="Select Car Brand Id"
+            >
+              <!-- <option>Select</option> -->
+              <option *ngFor="let car of AllCarBrand" value="{{ car.id }}">
+                {{ car.id }}
+              </option>
+              <!-- <option>Small select</option> -->
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="formrow-firstname-input">Car Model Code </label>
+            <input
+              type="text"
+              class="form-control"
+              id="formrow-firstname-input"
+              formControlName="code"
+            />
+          </div>
+
+          <div>
+            <button
+              type="submit"
+              class="btn btn-primary w-md"
+              (click)="onSubmitModel()"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{{ carBrandForm.value | json }}

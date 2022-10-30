@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+
+// .ltr {
+//     direction: ltr;
+//   }
+
+//   .rtl {
+//     direction: rtl;
+//   }
+
+@import '../../../node_modules/ng-wizard/themes/ng_wizard.min';
+
+@import '../../../node_modules/ng-wizard/themes/ng_wizard_theme_arrows';
+
+
+.dec{
+
+   
+    img  {
+    transition: transform 0.1s;
+    
+    &:hover{
+        transform: scale(2.3);
+   
+        
+    }
+  
+}}
+
+.profile-user-wid img{
+    transition: transform 0.1s;
+    
+    &:hover{
+        transform: scale(2.4);
+   
+        
+    }  
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

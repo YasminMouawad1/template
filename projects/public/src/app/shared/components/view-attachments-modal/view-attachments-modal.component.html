@@ -1,0 +1,20 @@
+<div class="modal-header" ngbAutofocus>
+  <button type="button" style="padding: 0; margin: 0;" class="close float-left" aria-describedby="modal-title"
+    (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <h4 class="modal-title font-weight-bold show-isArabic" id="modal-title"> {{attachment.nameAr}} </h4>
+  <h4 class="modal-title font-weight-bold show-isEnglish" id="modal-title">   {{attachment.nameEn}} </h4>
+</div>
+<div class="modal-body text-center" style="padding: 1px;">
+
+  <!-- <pdf-viewer  *ngIf="isPdf" [src]="attachment.url" 
+  [rotation]="0"
+  [fit-to-page]="true"
+  [original-size]="true"
+  [show-all]="true"
+  style="display: block;"
+   ></pdf-viewer> -->
+
+  <img [src]="attachment.url" class="py-5" style="max-width: 95%;" />
+</div>

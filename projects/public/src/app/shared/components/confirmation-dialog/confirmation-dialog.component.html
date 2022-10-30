@@ -1,0 +1,18 @@
+<div class="modal-header" ngbAutofocus>
+  <button type="button" style="padding: 0; margin: 0;" class="close float-left" aria-describedby="modal-title"
+    (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <h4 class="modal-title font-weight-bold" id="modal-title">{{headTitle}}
+    <i class="fas fa-exclamation-circle text-danger mr-2"></i>
+  </h4>
+</div>
+<div class="modal-body p-4">
+  <p class="font-weight-bold">{{title}}</p>
+  <p>{{desc}}</p>
+</div>
+<div class="modal-footer justify-content-start">
+  <button type="button" class="btn btn-outline-tertiary ml-2"
+    (click)="activeModal.dismiss('cancel click')">{{cancelBtn}}</button>
+  <button type="button" class="btn btn-danger mr-2 " (click)="activeModal.close('Ok click')">{{okBtn}}</button>
+</div>

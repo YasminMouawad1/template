@@ -1,0 +1,82 @@
+<div class="card">
+  <div class="card-body">
+    <div class="d-flex align-items-start justify-content-between">
+      <h4 class="card-title">Car Brand</h4>
+      <button class="btn btn-success mb-4" routerLink="add">
+        <i class="mdi mdi-plus font-size-18"></i>
+        Add Car Brand
+      </button>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table align-middle table-nowrap table-hover">
+        <thead class="table-light">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Car Brand Name</th>
+            <th scope="col">Car Brand Code</th>
+            <th scope="col">Care Model Name</th>
+            <th scope="col">Care Model Code</th>
+            <th scope="col">options</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let car of carLookups">
+            <td>
+              {{ car.id }}
+            </td>
+            <td>
+              <h5 class="font-size-14 mb-1">
+                <a href="javascript: void(0);" class="text-dark">{{
+                  car.name
+                }}</a>
+              </h5>
+            </td>
+            <td>
+              <h5 class="font-size-14 mb-1">
+                <a href="javascript: void(0);" class="text-dark">{{
+                  car.code
+                }}</a>
+              </h5>
+            </td>
+            <td>
+              <ul
+                class="verti-timeline list-unstyled"
+                *ngFor="let model of car.carModelModels; index as i"
+              >
+                <li class="event-list mb-3">
+                  <div class="event-timeline-dot">
+                    <i class="bx bx-right-arrow-circle font-size-18"></i>
+                  </div>
+                  <div *ngIf="model">
+                    {{ model.name }}
+                  </div>
+                </li>
+              </ul>
+            </td>
+            <td>
+              <ul
+                class="verti-timeline list-unstyled"
+                *ngFor="let model of car.carModelModels; index as i"
+              >
+                <li class="event-list mb-3">
+                  <div *ngIf="model">
+                    {{ model.code }}
+                  </div>
+                </li>
+              </ul>
+            </td>
+            <td>
+              <a class="action-icon text-secondary">
+                <i class="mdi mdi-table-edit font-size-18"></i
+              ></a>
+              <a class="action-icon text-danger">
+                <i class="mdi mdi-trash-can font-size-18"></i
+              ></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
